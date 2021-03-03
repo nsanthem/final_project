@@ -4,12 +4,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Final</title>
+  <title>Thisher - Jade Jewelry</title>
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.css" />
+
+  <style>
+    .carousel-open:checked + .carousel-item {
+      position: static;
+      opacity: 100;
+    }
+    .carousel-item {
+      -webkit-transition: opacity 0.6s ease-out;
+      transition: opacity 0.6s ease-out;
+    }
+    #carousel-1:checked ~ .control-1,
+    #carousel-2:checked ~ .control-2,
+    #carousel-3:checked ~ .control-3 {
+      display: block;
+    }
+    .carousel-indicators {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      bottom: 2%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 10;
+    }
+    #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+    #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+    #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+      color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
+    }
+  </style>
 </head>
 
+
 <body>
+
+  <!-- Start of the home page -->
+ 
+  <body class="bg-black">
+    <h1 class="m-4 p-16 uppercase text-white text-6xl font-bold text-left">Thisher</h1>
+
+<div class="p-4 sm:flex text-white font-bold uppercase bg-gray-600 text-xl text-center">
+    <div class="md:w-1/3">
+    <p>Product Families:</p> 
+    </div>
+
+    <div class="md:w-1/3 underline">
+    <p><a href=thisher_antheia.html>Thisher Antheia</a> 
+    </div>
+
+    <div class="md:w-1/3 underline">
+        <a href=thisher_classic.html>Thisher Classic</a>
+    </div>
+
+    <div class="md:w-1/3 underline">
+      <a href=thisher_mixte.html>Thisher Mixte</a>
+  </div>
+  <div class="md:w-1/3 underline">
+    <a href=admin_page.html>Admin Login</a></p>
+</div>    
+</div>
+
+<!-- Start of Image Carousel -->
+<div>
+  <div class="carousel relative shadow-2xl bg-black p-12">
+    <div class="carousel-inner relative overflow-hidden w-full">
+      <!--Image 1-->
+      <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+      <div class="carousel-item absolute opacity-0" style="height:50vh;">
+          <img class="rounded object-fill w-2/3 mx-auto" src="https://cdn.shopify.com/s/files/1/1262/6753/t/6/assets/slide_4_1024x1024.jpg?v=12042363387532863244">
+      </div>
+      <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+      <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+      
+      <!--Image 2-->
+      <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel-item absolute opacity-0" style="height:50vh;">
+        <img class="rounded object-contain w-2/3 mx-auto" src="https://cdn.shopify.com/s/files/1/1262/6753/t/6/assets/slide_6_1024x1024.jpg?v=14198628554001718116">
+      </div>
+      <label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+      <label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label> 
+      
+      <!--Image 3-->
+      <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel-item absolute opacity-0" style="height:50vh;">
+        <img class="rounded object-contain w-2/3 mx-auto" src="https://cdn.shopify.com/s/files/1/1262/6753/t/6/assets/slide_3_1024x1024.jpg?v=10518682004901713125">
+      </div>
+      <label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+      <label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+  
+       <!-- Add additional indicators for each slide-->
+      <ol class="carousel-indicators">
+        <li class="inline-block mr-3">
+          <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+        </li>
+        <li class="inline-block mr-3">
+          <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+        </li>
+        <li class="inline-block mr-3">
+          <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+        </li>
+      </ol>
+		
+    </div>
+  </div>
+</div>
+
+
+
+<!-- End of Image Carousel -->
+
+<div class="m-2">
+    <h1 class="text-2xl uppercase font-bold text-center text-white">Sign up to receive newsletter</h1>
+​
+    <form netlify class="mx-auto w-64">
+      <label class="block mt-4 font-bold text-white" for="name">Your Name</label>
+      <input class="p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:border-purple-500" type="text" id="name" name="name">
+
+      <label class="block mt-4 font-bold text-white" for="favorite-color">Your Email</label>
+      <input class="p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:border-purple-500" type="text" id="favorite-color" name="favoriteColor">
+
+      <button class="block mt-4 uppercase text-white bg-gray-600 rounded px-4 py-2">Sign Up</button>
+    </form>
+  </div> 
+ 
+
+<!-- End of home page, below is sign in and firebase codes --> 
+ 
   <div class="sign-in-or-sign-out"></div>
  
   <!-- Put the Firebase config here -->
