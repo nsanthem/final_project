@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thisher - Jade Jewelry</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.css" />
+
+  <!--Sign In Form-->
+<div class="m-2">
+    <h1 class="text-xl uppercase font-serif text-center text-white">Please sign in to access the administrator portal.</h1>
+</div> 
+ 
+
+<!-- Firebase codes --> 
+ 
+  <div class="sign-in-or-sign-out"></div>
+ 
+  <!-- Put the Firebase config here -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+  <!-- Firebase Auth -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+    apiKey: "AIzaSyBSO2Mq6xMU6TLMDiidmijEhUu_RanBtNo",
+    authDomain: "kiei-451-cf945.firebaseapp.com",
+    projectId: "kiei-451-cf945",
+    storageBucket: "kiei-451-cf945.appspot.com",
+    messagingSenderId: "560315995791",
+    appId: "1:560315995791:web:ab7bdbd4392ad8f90382fa"
+  };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="index.js"></script>
+</body>
+
+</html>
