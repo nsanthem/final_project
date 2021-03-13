@@ -39,86 +39,94 @@
 <!--HTML for Product Page-->
 <div class = admin-view>
     <h1 class="pt-4 px-16 text-white text-center">Placeholder for admin view of product page</h1>
+
   <!--HTML for Menu Bar-->
   <div class = menu>
     <div class="p-4 sm:flex -mx-32 text-white font-serif uppercase bg-gray-800 text-l text-center">
-      <div class="md:w-1/3">
-      <a href=thisher_antheia.html>Thisher Antheia</a> 
-      </div>
+        <div class="md:w-1/2 ml-8">
+            <p><a href=admin.html>Admin Home</a>
+        </div>
 
-      <div class="md:w-1/3">
-          <a href=thisher_classic.html>Thisher Classic</a>
-      </div>
+        <div class="md:w-1/2">
+            <a href=thisher_classic.html>Thisher Classic</a>
+        </div>
 
-      <div class="md:w-1/3">
-        <a href=thisher_mixte.html>Thisher Mixte</a>
+        <div class="md:w-1/2">
+            <a href=thisher_mixte.html>Thisher Mixte</a>
+        </div>
+        <div class="md:w-1/2 mr-12">
+            <a href=index.html>Live site</a></p>
+        </div>
     </div>
-    <div class="md:w-1/3 mr-72">
-      <a href=index.html>Home</a>
-  </div>    
   </div>
-  </div>
+
   <!--HTML for Antheia-->
     <div class= antheia>
-      <h1 class="m-12 p-4 uppercase text-white text-4xl font-bold text-center bg-gray-600">THISHER ANTHEIA</h1>
+        <h1 class="m-4 p-8 uppercase text-white text-4xl font-serif tracking-widest text-center">Thisher Antheia</h1>
+    
+        <div class="m-12 p-2 text-white text-md text-left">
+            <p class="pt-2">The Antheia Collection celebrates the profoundness and magnificence of nature. Nature reveals
+                its beauty through unexpected objects: a blossoming lotus flower, a flourishing maple leaf, an enchanting
+                butterfly. </p>
+            <p class="pt-2">Thisher's Antheia collection captures the beauty of nature, turning these transient moments into
+                infinite delicacy through precious jade jewelry.</p>
+            <p class="pt-2 italic">Note: Each pendant comes with a complimentary chain.</p>
+        </div>
+    
+        <div class="m-12 sm:flex text-white text-md text-left">
+    
+            <div class="product w-1/3 p-4">
+                <div class="productImage" id="butterflyInChalcedony">
+                    <img src=https://cdn.shopify.com/s/files/1/1262/6753/products/IMG_1557_large.jpg?v=1464300567>
+                </div>
 
-      <div class="m-12 text-white text-md text-left">
-          <p class="pt-2">The Antheia Collection celebrates the profoundness and magnificence of nature. Nature reveals
-              its beauty through unexpected objects: a blossoming lotus flower, a flourishing maple leaf, an enchanting
-              butterfly. </p>
-          <p class="pt-2">Thisher's Antheia collection captures the beauty of nature, turning these transient moments into
-              infinite delicacy through precious jade jewelry.</p>
-          <p class="pt-2 italic">Note: Each pendant comes with a complimentary chain.</p>
-      </div>
+                <div class="productDescription">
+                    <p class="productName font-bold underline"><a href=thisher_antheia_butterfly.html>Butterfly in Chalcedony</a></p>
+                    
+                    <div class ="productDetails">
+                        <p class="mt-4 priceLabel">Price</p>
+                        <input type="number" id="price" name="price" min="00.00" step="00.01" class="text-black" value="00.00">
 
-      <div class="m-12 sm:flex text-white text-md text-left">
+                       <p class="mt-4 quantityLabel">Quantity</p>
+                        <input type="number" id="quantity" name="quantity" min="0" step="1" class="text-black" value="1">
+                    </div>
 
-          <div class="w-1/3 p-4">
-
-              <div>
-                  <img src=https://cdn.shopify.com/s/files/1/1262/6753/products/IMG_1557_large.jpg?v=1464300567></p>
-              </div>
-
-              <div>
-                  <p class="font-bold">Butterfly in Chalcedony</p>
-                  <p class=" font-bold">$56.00</p>
-              </div>
-
-          </div>
-
-
-          <div class="w-1/3 p-4">
-
-              <div>
-                  <img
-                      src=https://cdn.shopify.com/s/files/1/1262/6753/products/sunflower_necklace_3_large.jpg?v=1464311282>
-              </div>
-
-              <div>
-                  <p class="font-bold">Marigold Jade Necklace</p>
-                  <p class=" font-bold">$182.00</p>
-              </div>
-          </div>
-
-
-          <div class="w-1/3 p-4">
-
-              <div>
-                  <img src=https://cdn.shopify.com/s/files/1/1262/6753/products/IMG_1504_large.jpg?v=1464302795></td>
-              </div>
-
-              <div>
-                  <p class="font-bold">Signature Leaf Jade Pendant</p>
-                  <p class=" font-bold">$74.00</p>
-              </div>
-          </div>
-
-      </div>
+                    <div class="mt-8 button"><button type="button" class="saveEdits bg-green-400 text-white py-2 px-8">Save</button></div>
+                </div>
+            </div>
+    
+    
+            <div class="w-1/3 p-4">
+    
+                <div>
+                    <img
+                        src=https://cdn.shopify.com/s/files/1/1262/6753/products/sunflower_necklace_3_large.jpg?v=1464311282>
+                </div>
+    
+                <div>
+                    <p class="font-bold underline"><a href=thisher_antheia_marigold.html>Marigold Jade Necklace</a></p>
+                    <p class=" font-bold">$182.00</p>
+                </div>
+            </div>
+    
+    
+            <div class="w-1/3 p-4">
+    
+                <div>
+                    <img src=https://cdn.shopify.com/s/files/1/1262/6753/products/IMG_1504_large.jpg?v=1464302795></td>
+                </div>
+    
+                <div>
+                    <p class="font-bold underline"><a href=thisher_antheia_leaf.html>Signature Leaf Jade Pendant</a></p>
+                    <p class=" font-bold">$74.00</p>
+                </div>
+            </div>
+        </div>
     </div>
 
   <!--HTML for Classic-->
   <div class = classic>
-  <h1 class="m-12 p-4 uppercase text-white text-4xl font-bold text-center bg-gray-600">THISHER CLASSIC</h1>
+  <h1 class="m-4 p-8 uppercase text-white text-4xl font-serif tracking-widest text-center">THISHER CLASSIC</h1>
 
     <div class="m-12 text-white text-md text-left">
         <p class="pt-2">The Classic Collection features jade pieces highlighting motifs from traditional oriental
@@ -174,7 +182,7 @@
 
   <!--HTML for Mixte-->
   <div class = mixte>
-    <h1 class="m-12 p-4 uppercase text-white text-4xl font-bold text-center bg-gray-600">THISHER MIXTE</h1>
+    <h1 class="m-4 p-8 uppercase text-white text-4xl font-serif tracking-widest text-center">THISHER MIXTE</h1>
 
     <div class="m-12 text-white text-md text-left">
         <p class="pt-2">The Mixte Collection re-positions classic jade jewelry through contemporary design. A modern
