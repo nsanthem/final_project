@@ -1,4 +1,5 @@
 firebase.auth().onAuthStateChanged(async function(user){
+
     if (user){
     // Signed in
     document.querySelector('.sign-in-or-sign-out').innerHTML = '<h3>Hi there USER</h3> <a href="#" class="sign-out text-green-500-underline">Sign Out</a>'
@@ -10,7 +11,6 @@ firebase.auth().onAuthStateChanged(async function(user){
     })
 
     console.log('signed in')
-
     }else{
 
     //Hide data
