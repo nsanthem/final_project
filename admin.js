@@ -1,5 +1,6 @@
 firebase.auth().onAuthStateChanged(async function(user){
 
+    let db = firebase.firestore()
     if (user){
     // Signed in
     document.querySelector('.sign-in-or-sign-out').innerHTML = '<h3>Hi there USER</h3> <a href="#" class="sign-out text-green-500-underline">Sign Out</a>'
