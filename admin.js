@@ -12,6 +12,10 @@ firebase.auth().onAuthStateChanged(async function(user){
     console.log('signed in')
 
     }else{
+
+    //Hide data
+    document.querySelector('.admin-view').classList.add('hidden')
+
     // Signed out
     console.log('signed out')
 
