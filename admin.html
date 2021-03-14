@@ -51,23 +51,32 @@
     
         <div class="m-12 sm:flex text-white text-md text-left">
             <div id="butterflyInChalcedony" class="product w-1/3 p-4">
+
                 <div class="productImage">
                     <img src=https://cdn.shopify.com/s/files/1/1262/6753/products/IMG_1557_large.jpg?v=1464300567>
                 </div>
 
-                <div class="productDescription">
+                <div class="productListing">
                     <p class="productName font-bold underline"><a href=thisher_antheia_butterfly.html>Butterfly in Chalcedony</a></p>
-
                     <div class ="productDetails">
-                        <p class="mt-4 priceLabel">Price</p>
-                        <input type="number" id="price" name="price" min="00.00" step="00.01" class="editPrice text-black" value="00.00">
+                        <form class="form">
+                            <div class="price">
+                                <p class="mt-4 priceLabel">Price</p>
+                                <input type="number" id="price" name="price" min="00.00" step="00.01" class="editPrice text-black" value="00.00">
+                            </div>
 
-                       <p class="mt-4 quantityLabel">Quantity</p>
-                        <input type="number" id="quantity" name="quantity" min="0" step="1" class="editQuantity text-black" value="1">
+                            <div class="quantity mt-8">
+                                <p class="mt-4 quantityLabel">Qty</p>
+                                <input type="number" id="quantity" name="quantity" min="0" step="1" class="editQuantity text-black" value="1">
+                            </div>
+
+                            <div class="mt-8 button">
+                                <input type="submit" value="Update" class="updateButton bg-green-400 text-white py-2 px-8 hover:bg-green-600 rounded-xl">
+                            </div>
+                        </form>
                     </div>
-
-                    <div class="mt-8 button"><button type="button" class="saveEdits bg-green-400 text-white py-2 px-8">Save</button></div>
                 </div>
+
             </div>
     
     

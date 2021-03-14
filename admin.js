@@ -16,11 +16,16 @@ firebase.auth().onAuthStateChanged(async function(user){
           firebase.auth().signOut()
           document.location.href = 'admin.html'
       })
-      console.log('signed in') 
+      //console.log('signed in') 
 
-      //Edit quantity
-      document.querySelector('.editPrice').addEventListener()
-      
+      //Listen for form submit and set new quantity & price
+      document.querySelector('.updateButton').addEventListener('click', async function(event){
+        event.preventDefault()
+        let price = document.querySelector('#price').value
+        let quantity = document.querySelector('#quantity').value
+        console.log('submitted')
+      })
+
     }else{
       //Hide data
       document.querySelector('.admin-view').classList.add('hidden')
@@ -42,4 +47,6 @@ firebase.auth().onAuthStateChanged(async function(user){
       ui.start('.sign-in-or-sign-out', authUIConfig)
 
       }
+
+ 
   })
