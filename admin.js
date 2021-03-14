@@ -18,12 +18,12 @@ firebase.auth().onAuthStateChanged(async function(user){
       })
       //console.log('signed in') 
 
-      //Listen for form submit and set new quantity & price
+      //Listen for form submission and set new quantity & price
       document.querySelector('.updateButton').addEventListener('click', async function(event){
         event.preventDefault()
         let price = document.querySelector('#price').value
         let quantity = document.querySelector('#quantity').value
-        console.log('submitted')
+        console.log('submitted')//NOTE for Vesper & Tim: console is not showing that the form is submitted so something is wrong....
       })
 
     }else{
