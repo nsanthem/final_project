@@ -23,8 +23,8 @@ firebase.auth().onAuthStateChanged(async function(user){
       document.querySelector('.updateButton').addEventListener('click', async function(event){
         event.preventDefault()
 
-        let price = document.querySelector('#price').value
-        let quantity = document.querySelector('#quantity').value
+        let price = document.querySelector('.editPrice').value
+        let quantity = document.querySelector('.editQuantity').value
         console.log(`submitted new price of ${price} and ${quantity}!`)//This worked! 
         
         // Tim Step: 3/14/21 Adding form information to firebase
