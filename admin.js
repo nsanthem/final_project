@@ -7,23 +7,25 @@ firebase.auth().onAuthStateChanged(async function(user){
         name: user.displayName,
         email: user.email
       })
+      //End of Set User Details
 
       // Signed in
-      document.querySelector('.sign-in-or-sign-out').innerHTML = `<h3>Hi ${user.displayName}!</h3> <a href="#" class="sign-out text-green-500 underline">Sign Out</a>`
+      document.querySelector('.sign-in-or-sign-out').innerHTML = `<h3 class="text-3xl font-serif text-left">Hi ${user.displayName}!</h3> <a href="#" class="sign-out text-green-500 underline font-serif"><p class="text-left mt-2">Sign Out</p></a>`
 
       document.querySelector('.sign-out').addEventListener('click', function(event){
           event.preventDefault()
           firebase.auth().signOut()
           document.location.href = 'admin.html'
       })
-      //console.log('signed in') 
+      // End of Sign in
 
       //Listen for form submission and set new quantity & price
       document.querySelector('.updateButton').addEventListener('click', async function(event){
         event.preventDefault()
+
         let price = document.querySelector('#price').value
         let quantity = document.querySelector('#quantity').value
-        console.log('submitted')//This worked! 
+        console.log(`submitted new price of ${price} and ${quantity}!`)//This worked! 
         
         // Tim Step: 3/14/21 Adding form information to firebase
         let docRef = await db.collection('thisher').add({
