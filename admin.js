@@ -34,7 +34,12 @@ firebase.auth().onAuthStateChanged(async function(user){
         })
         // End of adding quantity and price data to firebase
 
+        //Remove old entry
+        let thisherId = docRef.id
+        console.log(`new input with ID ${thisherId} created`)
+
       })
+      // End of form submission
 
     }else{
       //Hide data

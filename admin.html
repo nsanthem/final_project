@@ -11,11 +11,10 @@
 <body class="bg-black mx-32">
 
 <!-- Sign in--> 
-  <div class="sign-in-or-sign-out pt-4 px-16 text-white text-center mb-4"></div>
+<div class="sign-in-or-sign-out pt-4 px-16 text-white text-center mb-4"></div>
 
 <!--HTML for Product Page-->
 <div class = admin-view>
-
   <!--HTML for Menu Bar-->
   <div class = menu>
     <div class="p-4 sm:flex -mx-32 text-white font-serif uppercase bg-gray-800 text-l text-center">
@@ -37,7 +36,9 @@
   </div>
 
   <!--HTML for Antheia-->
-    <div class= antheia>
+  <div class= antheia>
+         
+        <!--Introduction-->
         <h1 class="m-4 p-8 uppercase text-white text-4xl font-serif tracking-widest text-center">Thisher Antheia</h1>
     
         <div class="m-12 p-2 text-white text-md text-left">
@@ -48,10 +49,11 @@
                 infinite delicacy through precious jade jewelry.</p>
             <p class="pt-2 italic">Note: Each pendant comes with a complimentary chain.</p>
         </div>
-    
-        <div class="m-12 sm:flex text-white text-md text-left">
-            <div id="butterflyInChalcedony" class="product w-1/3 p-4">
 
+        <div class="m-12 sm:flex text-white text-md text-left">
+
+            <!--Butterfly in Chalcedony-->
+            <div id="butterflyInChalcedony" class="product w-1/3 p-4">
                 <div class="productImage">
                     <img src=https://cdn.shopify.com/s/files/1/1262/6753/products/IMG_1557_large.jpg?v=1464300567>
                 </div>
@@ -78,86 +80,163 @@
                 </div>
 
             </div>
-    
-    
-            <div class="w-1/3 p-4">
-    
-                <div>
-                    <img
-                        src=https://cdn.shopify.com/s/files/1/1262/6753/products/sunflower_necklace_3_large.jpg?v=1464311282>
+
+            <!---Marigold Jade Necklace-->
+            <div class="w-1/3 p-4" id="marigoldJadeNecklace">
+                <div class="productImage">
+                    <img src=https://cdn.shopify.com/s/files/1/1262/6753/products/sunflower_necklace_3_large.jpg?v=1464311282>
                 </div>
-    
-                <div>
+                <div class="productListing">
                     <p class="font-bold underline"><a href=thisher_antheia_marigold.html>Marigold Jade Necklace</a></p>
-                    <p class=" font-bold">$182.00</p>
+                    <div class ="productDetails">
+                        <form class="form">
+                            <div class="price">
+                                <p class="mt-4 priceLabel">Price</p>
+                                <input type="number" id="price" name="price" min="00.00" step="00.01" class="editPrice text-black" value="00.00">
+                            </div>
+
+                            <div class="quantity mt-8">
+                                <p class="mt-4 quantityLabel">Qty</p>
+                                <input type="number" id="quantity" name="quantity" min="0" step="1" class="editQuantity text-black" value="1">
+                            </div>
+
+                            <div class="mt-8 button">
+                                <input type="submit" value="Update" class="updateButton bg-green-400 text-white py-2 px-8 hover:bg-green-600 rounded-xl">
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-    
 
-            <div class="w-1/3 p-4">
-    
-                <div>
+            <!--Signature Leaf Jade Pendant-->
+            <div class="w-1/3 p-4" id="signatureLeafJadePendant">
+                <div class="productImage">
                     <img src=https://cdn.shopify.com/s/files/1/1262/6753/products/IMG_1504_large.jpg?v=1464302795></td>
                 </div>
     
-                <div>
+                <div class="productListing">
                     <p class="font-bold underline"><a href=thisher_antheia_leaf.html>Signature Leaf Jade Pendant</a></p>
-                    <p class=" font-bold">$74.00</p>
+                    <div class ="productDetails">
+                        <form class="form">
+                            <div class="price">
+                                <p class="mt-4 priceLabel">Price</p>
+                                <input type="number" id="price" name="price" min="00.00" step="00.01" class="editPrice text-black" value="00.00">
+                            </div>
+
+                            <div class="quantity mt-8">
+                                <p class="mt-4 quantityLabel">Qty</p>
+                                <input type="number" id="quantity" name="quantity" min="0" step="1" class="editQuantity text-black" value="1">
+                            </div>
+
+                            <div class="mt-8 button">
+                                <input type="submit" value="Update" class="updateButton bg-green-400 text-white py-2 px-8 hover:bg-green-600 rounded-xl">
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+  </div>
 
   <!--HTML for Classic-->
   <div class = classic>
-  <h1 class="m-4 p-8 uppercase text-white text-4xl font-serif tracking-widest text-center">THISHER CLASSIC</h1>
 
-    <div class="m-12 text-white text-md text-left">
-        <p class="pt-2">The Classic Collection features jade pieces highlighting motifs from traditional oriental
-            culture. Often a symbol of fortune and prosperity, the pieces of Thisher's Classic collection are uniquely
-            designed to embrace tradition and showcase the ever-lasting beauty.</p>
-        <p class="pt-2 italic">Note: Each pendant comes with a complimentary chain.</p>
-    </div>
-
+    <!--Introduction-->
+    <h1 class="m-4 p-8 uppercase text-white text-4xl font-serif tracking-widest text-center">THISHER CLASSIC</h1>
+        <div class="m-12 text-white text-md text-left">
+            <p class="pt-2">The Classic Collection features jade pieces highlighting motifs from traditional oriental
+                culture. Often a symbol of fortune and prosperity, the pieces of Thisher's Classic collection are uniquely
+                designed to embrace tradition and showcase the ever-lasting beauty.</p>
+            <p class="pt-2 italic">Note: Each pendant comes with a complimentary chain.</p>
+        </div>
+   
     <div class="m-12 sm:flex text-white text-md text-left">
+        <!--Jade Bead Necklace-->
+        <div class="w-1/3 p-4" id="jadeBeadNecklace">
 
-        <div class="w-1/3 p-4">
-
-            <div>
+            <div class="productImage">
                 <img
                     src=https://cdn.shopify.com/s/files/1/1262/6753/products/jade_beads_bracelet_large.jpg?v=1486697726>
             </div>
 
-            <div>
+            <div class="productListing">
                 <p class="font-bold">Jade Bead Necklace - Yellow</p>
-                <p class=" font-bold">$449.00</p>
+                <div class ="productDetails">
+                    <form class="form">
+                        <div class="price">
+                            <p class="mt-4 priceLabel">Price</p>
+                            <input type="number" id="price" name="price" min="00.00" step="00.01" class="editPrice text-black" value="00.00">
+                        </div>
+
+                        <div class="quantity mt-8">
+                            <p class="mt-4 quantityLabel">Qty</p>
+                            <input type="number" id="quantity" name="quantity" min="0" step="1" class="editQuantity text-black" value="1">
+                        </div>
+
+                        <div class="mt-8 button">
+                            <input type="submit" value="Update" class="updateButton bg-green-400 text-white py-2 px-8 hover:bg-green-600 rounded-xl">
+                        </div>
+                    </form>
+                </div>
             </div>
 
         </div>
 
+        <!--Jade Cloud-->
+        <div class="w-1/3 p-4" id="jadeCloud">
 
-        <div class="w-1/3 p-4">
-
-            <div>
+            <div class="productImage">
                 <img src=https://cdn.shopify.com/s/files/1/1262/6753/products/jade_cloud_3_large.jpg?v=1486696532>
             </div>
 
-            <div>
+            <div class="productListing">
                 <p class="font-bold">Jade Cloud</p>
-                <p class=" font-bold">$59.00</p>
+                <div class ="productDetails">
+                    <form class="form">
+                        <div class="price">
+                            <p class="mt-4 priceLabel">Price</p>
+                            <input type="number" id="price" name="price" min="00.00" step="00.01" class="editPrice text-black" value="00.00">
+                        </div>
+
+                        <div class="quantity mt-8">
+                            <p class="mt-4 quantityLabel">Qty</p>
+                            <input type="number" id="quantity" name="quantity" min="0" step="1" class="editQuantity text-black" value="1">
+                        </div>
+
+                        <div class="mt-8 button">
+                            <input type="submit" value="Update" class="updateButton bg-green-400 text-white py-2 px-8 hover:bg-green-600 rounded-xl">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
+        <!--Jade Plate-->
+        <div class="w-1/3 p-4" id="jadePlate">
 
-        <div class="w-1/3 p-4">
-
-            <div>
+            <div class="productImage">
                 <img src=https://cdn.shopify.com/s/files/1/1262/6753/products/white_jade_plate_3_large.jpg?v=1486608747>
             </div>
 
-            <div>
+            <div class="productListing">
                 <p class="font-bold">Jade Plate - Pure White</p>
-                <p class=" font-bold">$169.00</p>
+                <div class ="productDetails">
+                    <form class="form">
+                        <div class="price">
+                            <p class="mt-4 priceLabel">Price</p>
+                            <input type="number" id="price" name="price" min="00.00" step="00.01" class="editPrice text-black" value="00.00">
+                        </div>
+
+                        <div class="quantity mt-8">
+                            <p class="mt-4 quantityLabel">Qty</p>
+                            <input type="number" id="quantity" name="quantity" min="0" step="1" class="editQuantity text-black" value="1">
+                        </div>
+
+                        <div class="mt-8 button">
+                            <input type="submit" value="Update" class="updateButton bg-green-400 text-white py-2 px-8 hover:bg-green-600 rounded-xl">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
@@ -166,6 +245,8 @@
 
   <!--HTML for Mixte-->
   <div class = mixte>
+
+    <!--Introduction-->
     <h1 class="m-4 p-8 uppercase text-white text-4xl font-serif tracking-widest text-center">THISHER MIXTE</h1>
 
     <div class="m-12 text-white text-md text-left">
@@ -176,47 +257,93 @@
     </div>
 
     <div class="m-12 sm:flex text-white text-md text-left">
+    
+        <!--Colored Jade Pendant-->
+        <div class="w-1/3 p-4" id="coloredJadePendant">
 
-        <div class="w-1/3 p-4">
-
-            <div>
-                <img
-                    src=https://cdn.shopify.com/s/files/1/1262/6753/products/9_d9b74106-591f-4a1d-89ae-00f59288d7e7_large.jpg?v=1469148436>
+            <div class="productImage">
+                <img src=https://cdn.shopify.com/s/files/1/1262/6753/products/9_d9b74106-591f-4a1d-89ae-00f59288d7e7_large.jpg?v=1469148436>
             </div>
 
-            <div>
+            <div class="productListing">
                 <p class="font-bold">Colored Jade Pendant - Wave</p>
-                <p class=" font-bold">$68.00</p>
+                <div class ="productDetails">
+                    <form class="form">
+                        <div class="price">
+                            <p class="mt-4 priceLabel">Price</p>
+                            <input type="number" id="price" name="price" min="00.00" step="00.01" class="editPrice text-black" value="00.00">
+                        </div>
+
+                        <div class="quantity mt-8">
+                            <p class="mt-4 quantityLabel">Qty</p>
+                            <input type="number" id="quantity" name="quantity" min="0" step="1" class="editQuantity text-black" value="1">
+                        </div>
+
+                        <div class="mt-8 button">
+                            <input type="submit" value="Update" class="updateButton bg-green-400 text-white py-2 px-8 hover:bg-green-600 rounded-xl">
+                        </div>
+                    </form>
+                </div>
             </div>
 
         </div>
 
+        <!--Grape Vine Jade Pendant-->
+        <div class="w-1/3 p-4" id="grapeVineJadePendant">
 
-        <div class="w-1/3 p-4">
-
-            <div>
+            <div class="productImage">
                 <img
                     src=https://cdn.shopify.com/s/files/1/1262/6753/products/4_b826b82a-46d8-4450-8ef6-7a243c714cd4_large.jpg?v=1469149401>
             </div>
 
-            <div>
+            <div class="productListing">
                 <p class="font-bold">Grape Vine Jade Pendant - Silver</p>
-                <p class=" font-bold">$78.00</p>
+                <div class ="productDetails">
+                    <form class="form">
+                        <div class="price">
+                            <p class="mt-4 priceLabel">Price</p>
+                            <input type="number" id="price" name="price" min="00.00" step="00.01" class="editPrice text-black" value="00.00">
+                        </div>
+
+                        <div class="quantity mt-8">
+                            <p class="mt-4 quantityLabel">Qty</p>
+                            <input type="number" id="quantity" name="quantity" min="0" step="1" class="editQuantity text-black" value="1">
+                        </div>
+
+                        <div class="mt-8 button">
+                            <input type="submit" value="Update" class="updateButton bg-green-400 text-white py-2 px-8 hover:bg-green-600 rounded-xl">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
+        <!--Grape Pendant in Colored Jade-->
+        <div class="w-1/3 p-4" id="grapePendantinColoredJade">
 
-        <div class="w-1/3 p-4">
-
-            <div>
-                <img
-                    src=https://cdn.shopify.com/s/files/1/1262/6753/products/6_5a6177c3-3067-47d0-9c6c-6e9ff9ee8da0_large.jpg?v=1469149322>
-                </td>
+            <div class="productImage">
+                <img src=https://cdn.shopify.com/s/files/1/1262/6753/products/6_5a6177c3-3067-47d0-9c6c-6e9ff9ee8da0_large.jpg?v=1469149322>
             </div>
 
-            <div>
+            <div class="productListing">
                 <p class="font-bold">Grape Pendant in Colored Jade</p>
-                <p class=" font-bold">$74.00</p>
+                <div class ="productDetails">
+                    <form class="form">
+                        <div class="price">
+                            <p class="mt-4 priceLabel">Price</p>
+                            <input type="number" id="price" name="price" min="00.00" step="00.01" class="editPrice text-black" value="00.00">
+                        </div>
+
+                        <div class="quantity mt-8">
+                            <p class="mt-4 quantityLabel">Qty</p>
+                            <input type="number" id="quantity" name="quantity" min="0" step="1" class="editQuantity text-black" value="1">
+                        </div>
+
+                        <div class="mt-8 button">
+                            <input type="submit" value="Update" class="updateButton bg-green-400 text-white py-2 px-8 hover:bg-green-600 rounded-xl">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
