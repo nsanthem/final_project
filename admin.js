@@ -23,7 +23,15 @@ firebase.auth().onAuthStateChanged(async function(user){
         event.preventDefault()
         let price = document.querySelector('#price').value
         let quantity = document.querySelector('#quantity').value
-        console.log('submitted')//NOTE for Vesper & Tim: console is not showing that the form is submitted so something is wrong....
+        console.log('submitted')//This worked! 
+        
+        // Tim Step: 3/14/21 Adding form information to firebase
+        let docRef = await db.collection('thisher').add({
+          priceData: price,
+          quantityData: quantity
+        })
+        // End of adding quantity and price data to firebase
+
       })
 
     }else{
