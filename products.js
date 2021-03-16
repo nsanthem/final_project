@@ -32,7 +32,6 @@ for (let i=0; i<products.length; i++) {
     let productUrl = productData.imgUrl
 
     renderProduct(productName, productPrice, productQuantity, productUrl)
-    
 }
 })
 // end javascript function to display products
