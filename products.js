@@ -2,16 +2,14 @@ let db = firebase.firestore()
 
 async function renderProduct(productName, productPrice, productQuantity, productUrl) {
   document.querySelector('.products').insertAdjacentHTML('beforeend',`
-  <div class="m-12 sm:flex text-white text-md text-left">
-  <div class="w-1/3 p-4">
+  <div class="m-12 md:flex text-white text-md text-left">
       <div>
-          <img src=${productUrl}></p>
+          <img class="w-full" src=${productUrl}></p>
       </div>
       <div>
           <p class="font-bold">${productName}</p>
           <p class=" font-bold">Price: $${productPrice}</p>
           <p class=" font-bold">Quantity: ${productQuantity}</p>
-      </div>
   </div>
 `)
 }
