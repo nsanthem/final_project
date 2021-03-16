@@ -7,14 +7,13 @@ async function renderProduct(productName, productPrice, productQuantity, product
   <div class="text-white">
       <div class="productListing mx-4">
           <img src=${productUrl}>
-          <p class="font-bold mt-4 text-xl md:text-2xl">${productName}</p>
+          <p class="font-bold mt-4 text-xl font-serif md:text-2xl">${productName}</p>
           <p class="font-bold">Price: $${productPrice}</p>
           <p class="font-bold mb-4">Quantity: ${productQuantity}</p>
       </div>
   </div>
 `)
 }
-
 window.addEventListener('DOMContentLoaded', async function(event) {
   event.preventDefault()
 
