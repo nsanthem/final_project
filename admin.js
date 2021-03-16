@@ -18,6 +18,7 @@ firebase.auth().onAuthStateChanged(async function(user){
           document.location.href = 'admin.html'
       })
       // End of Sign in
+      
 
       //Listen for form submission and set new quantity & price
       document.querySelector('.updateButton').addEventListener('click', async function(event){
@@ -25,10 +26,11 @@ firebase.auth().onAuthStateChanged(async function(user){
 
         let price = document.querySelector('.editPrice').value
         let quantity = document.querySelector('.editQuantity').value
-        console.log(`submitted new price of ${price} and ${quantity}!`)//This worked! 
+        console.log(`submitted new price of ${price} and ${quantity}!`)
         
-        // Tim Step: 3/14/21 Adding form information to firebase
-        let docRef = await db.collection('thisher').add({
+        //Adding form information to firebase
+        let docRef = await db.collection('products').add({
+
           priceData: price,
           quantityData: quantity
         })
@@ -40,6 +42,7 @@ firebase.auth().onAuthStateChanged(async function(user){
 
       })
       // End of form submission
+
 
     }else{
       //Hide data
