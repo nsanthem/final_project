@@ -1,5 +1,7 @@
 let db = firebase.firestore()
 
+
+// start js function to pull products from firebase and display on products html
 async function renderProduct(productName, productPrice, productQuantity, productUrl) {
   document.querySelector('.products').insertAdjacentHTML('beforeend',`
   <div class="m-12 md:flex text-white text-md text-left">
@@ -32,3 +34,4 @@ for (let i=0; i<products.length; i++) {
     renderProduct(productName, productPrice, productQuantity, productUrl)
 }
 })
+// end javascript function to display products
