@@ -25,10 +25,13 @@ firebase.auth().onAuthStateChanged(async function (user) {
     let products = querySnapshot.docs
 
     console.log(products)
+ 
 
     for (let i = 0; i < products.length; i++) {
       let productData = products[i].data()
-      let productId = productData.productId
+      let productId = products[i].id
+      console.log(productData)
+      console.log(productId)
       let productName = productData.itemName
       let productPrice = productData.priceData
       let productQuantity = productData.quantityData
@@ -96,9 +99,8 @@ async function renderProduct(productId, productName, productPrice, productQuanti
 
     // Struggling here to see how I can get this to update the existing fields in our products collection in firebase
     let querySnapshot = await db.collection('products')
-      .where('productId', '==', productId)
-      .get()
-
+                                .where('productId', '==', productId)
+                                .get()
     console.log(querySnapshot)
 
     let price = document.querySelector(`.productListing-${productId} .editPrice`).value
@@ -106,14 +108,15 @@ async function renderProduct(productId, productName, productPrice, productQuanti
     console.log(`submitted new price of ${price} and ${quantity}!`)
 
     //Adding form information to firebase and updating for new price and quantity in firebase
-    if (querySnapshot.size == 0) {
-      await db.collection('products').update({
-        productId: productId,
+   
+
+      let response = await db.collection('products').doc(productId).set({
+        itemName: productName,
+        imgUrl: productUrl,
         priceData: price,
-        quantityData: quantity,
-        userId: currentUser.uid
+        quantityData: quantity
       })
-    }
+        console.log(response)
     // End of adding quantity and price data to firebase
 
     //Remove old entry
