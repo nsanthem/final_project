@@ -94,10 +94,12 @@ let db = firebase.firestore()
     console.log(`product ${productId} update button clicked!`)
     let currentUser = firebase.auth().currentUser
 
+    // Struggling here to see how I can get this to update the existing fields in our products collection in firebase
     let querySnapshot = await db.collection('products')
                                 .where('productId','==', productId)
-                                .where('userId', '==', currentUser.uid)
                                 .get()  
+
+    console.log(querySnapshot)
 
     let price = document.querySelector(`.productListing-${productId} .editPrice`).value
     let quantity = document.querySelector(`.productListing-${productId} .editQuantity`).value
@@ -111,9 +113,6 @@ let db = firebase.firestore()
       quantityData: quantity,
       userId: currentUser.uid
     })
-
-    // Struggling to see here how to get the new data to replace the old ones
-
     }
     // End of adding quantity and price data to firebase
 
