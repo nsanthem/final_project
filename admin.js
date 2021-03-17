@@ -21,21 +21,29 @@ firebase.auth().onAuthStateChanged(async function (user) {
 
     // start loop connected to js function at the bottom to pull products
 
-    let querySnapshot = await db.collection('products').get()
-    let products = querySnapshot.docs
+    // let querySnapshot = await db.collection('products').get()
+    // let products = querySnapshot.docs
 
-    console.log(products)
- 
+    // console.log(products)
+
+    let response = await fetch(`http://localhost:8888/.netlify/functions/get_products`)
+    let products = await response.json()
 
     for (let i = 0; i < products.length; i++) {
-      let productData = products[i].data()
+      // let productData = products[i].data()
       let productId = products[i].id
-      console.log(productData)
-      console.log(productId)
-      let productName = productData.itemName
-      let productPrice = productData.priceData
-      let productQuantity = productData.quantityData
-      let productUrl = productData.imgUrl
+      // console.log(productData)
+      // console.log(productId)
+      // let productName = productData.itemName
+      // let productPrice = productData.priceData
+      // let productQuantity = productData.quantityData
+      // let productUrl = productData.imgUrl
+      
+      let productName = products[i].name
+      let productPrice = products[i].price
+      let productQuantity = products[i].quantity
+      let productUrl = products[i].image
+
       renderProduct(productId, productName, productPrice, productQuantity, productUrl)
     }
     // end loop
