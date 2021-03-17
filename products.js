@@ -33,5 +33,4 @@ for (let i=0; i<products.length; i++) {
 }
 
 })
-
 // end javascript function to display products

@@ -52,7 +52,7 @@ firebase.auth().onAuthStateChanged(async function(user){
         let querySnapshot = await db.collection('products').get()
         let products = querySnapshot.docs
 
-        console.log(products)
+        console.log(products.lenth)
 
         for (let i=0; i<products.length; i++) { 
             let productData = products[i].data()
