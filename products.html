@@ -1,49 +1,54 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thisher Antheia</title>
+    <title>Products</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body class="bg-black mx-8">
-    <h1 class="m-4 p-8 ml-48 uppercase text-white text-4xl font-serif tracking-widest text-left">Thisher Antheia</h1>
-
-    <div class="p-4 sm:flex -mx-32 text-white font-serif uppercase bg-gray-800 text-l text-center">
-
+    <!--MENU-->
+    <div class="p-4 sm:flex -mx-32 text-white font-serif bg-gray-800 text-l text-center">
         <div class="md:w-1/3 ml-72 mx-auto">
           <p><a href=index.html>Home</a> 
           </div>
          
           <div class="md:w-1/3 font-bold mx-auto">
-          <p><a href=thisher_antheia.html>Thisher Antheia</a> 
+          <p><a href=products.html>Products</a> 
           </div>
       
-          <div class="md:w-1/3 mx-auto">
+          <!-- <div class="md:w-1/3 mx-auto">
               <a href=thisher_classic.html>Thisher Classic</a>
           </div>
       
           <div class="md:w-1/3 mx-auto">
             <a href=thisher_mixte.html>Thisher Mixte</a>
-        </div>
+        </div> -->
         <div class="md:w-1/3 mr-72 mx-auto">
           <a href=admin.html>Admin Login</a></p>
-      </div>    
+        </div>    
       </div>
+    <!--END OF MENU-->
+    
+    <h1 class="p-8 text-white text-4xl font-serif tracking-widest text-center">Products</h1>
 
-    <div class="m-12 p-2 text-white text-md text-left">
+    <!-- <div class="m-4 p-2 text-white text-md text-left">
         <p class="pt-2">The Antheia Collection celebrates the profoundness and magnificence of nature. Nature reveals
             its beauty through unexpected objects: a blossoming lotus flower, a flourishing maple leaf, an enchanting
             butterfly. </p>
         <p class="pt-2">Thisher's Antheia collection captures the beauty of nature, turning these transient moments into
             infinite delicacy through precious jade jewelry.</p>
         <p class="pt-2 italic">Note: Each pendant comes with a complimentary chain.</p>
-    </div>
+    </div> -->
 
-    <div class="m-12 sm:flex text-white text-md text-left">
+        <div class="products grid grid-cols-1 md:grid-cols-3">
+            <!-- Products rendered from JavaScript -->
+        </div>
 
-        <div class="w-1/3 p-4">
+
+        <!-- <div class="w-1/3 p-4">
 
             <div>
                 <img src=https://cdn.shopify.com/s/files/1/1262/6753/products/IMG_1557_large.jpg?v=1464300567></p>
@@ -81,10 +86,31 @@
                 <p class="font-bold underline"><a href=thisher_antheia_leaf.html>Signature Leaf Jade Pendant</a></p>
                 <p class=" font-bold">$74.00</p>
             </div>
-        </div>
-
+        </div> -->
     </div>
 
+  <!-- Put the Firebase config here -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+  <!-- Firebase Auth -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+    apiKey: "AIzaSyBSO2Mq6xMU6TLMDiidmijEhUu_RanBtNo",
+    authDomain: "kiei-451-cf945.firebaseapp.com",
+    projectId: "kiei-451-cf945",
+    storageBucket: "kiei-451-cf945.appspot.com",
+    messagingSenderId: "560315995791",
+    appId: "1:560315995791:web:ab7bdbd4392ad8f90382fa"
+  }
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="products.js"></script>
 </body>
 
 </html>
