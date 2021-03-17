@@ -95,18 +95,20 @@ let db = firebase.firestore()
 
     let querySnapshot = await db.collection('products')
                                 .where('productId','==', productId)
-                                .get()                            
+                                .get()   
+                                
+    console.log(querySnapshot)
 
-    let price = document.querySelector('.editPrice').value
-    let quantity = document.querySelector('.editQuantity').value
+    let price = document.querySelector(`.productListing-${productId} .editPrice`).value
+    let quantity = document.querySelector(`.productListing-${productId} .editQuantity`).value
     console.log(`submitted new price of ${price} and ${quantity}!`)
     
-    //Adding form information to firebase
+    //Adding form information to firebase and updating for new price and quantity
     let docRef = await db.collection('products').add({
-
       priceData: price,
       quantityData: quantity
     })
+  
     // End of adding quantity and price data to firebase
 
     //Remove old entry
