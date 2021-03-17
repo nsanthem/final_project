@@ -88,32 +88,46 @@ let db = firebase.firestore()
   `)
   // end function to pull products 
 
-    //Listen for form submission and set new quantity & price
+    //Listen for form submission and set new quantity & price table in firebase
   document.querySelector(`.productListing-${productId} .updateButton`).addEventListener('click', async function(event){
     event.preventDefault()
     console.log(`product ${productId} update button clicked!`)
+    let currentUser = firebase.auth().currentUser
 
-    let querySnapshot = await db.collection('products')
+    let querySnapshot = await db.collection('priceQuantity')
                                 .where('productId','==', productId)
-                                .get()   
-                                
-    console.log(querySnapshot)
+                                .where('userId', '==', currentUser.uid)
+                                .get()  
 
     let price = document.querySelector(`.productListing-${productId} .editPrice`).value
     let quantity = document.querySelector(`.productListing-${productId} .editQuantity`).value
     console.log(`submitted new price of ${price} and ${quantity}!`)
     
-    //Adding form information to firebase and updating for new price and quantity
-    let docRef = await db.collection('products').add({
+    //Adding form information to firebase and updating for new price and quantity in firebase
+    if (querySnapshot.size == 0){
+    await db.collection('priceQuantity').add({
+      productId: productId,
       priceData: price,
-      quantityData: quantity
+      quantityData: quantity,
+      userId: currentUser.uid
     })
-  
+
+    // Struggling to see here how to get the new data to replace the old ones
+
+    let oldPrice = document.querySelector(`.productListing-${productId} .editPrice`).value
+    let newPrice = parseInt(oldPrice) + 
+    document.querySelector(`.productListing-${productId} .editPrice`).value = newPrice
+
+    let oldQuantity = document.querySelector(`.productListing-${productId} .editQuantity`).value
+    let newQuantity = parseInt(oldQuantity) + 
+    document.querySelector(`.productListing-${productId} .editQuantity`).value = newQuantity 
+
+    }
     // End of adding quantity and price data to firebase
 
     //Remove old entry
-    let thisherId = docRef.id
-    console.log(`new input with ID ${thisherId} created`)
+    // let thisherId = docRef.id
+    // console.log(`new input with ID ${thisherId} created`)
 
   })
       // End of form submission
