@@ -52,7 +52,7 @@ firebase.auth().onAuthStateChanged(async function(user){
         let querySnapshot = await db.collection('products').get()
         let products = querySnapshot.docs
 
-        console.log(products.lenth)
+        console.log(products)
 
         for (let i=0; i<products.length; i++) { 
             let productData = products[i].data()
@@ -94,7 +94,7 @@ firebase.auth().onAuthStateChanged(async function(user){
 
     }else{
       //Hide data
-      document.querySelector('.admin-view').classList.add('hidden')
+      document.querySelector('.products').classList.add('hidden')
 
       // Signed out
       console.log('signed out')
