@@ -88,32 +88,37 @@ let db = firebase.firestore()
   `)
   // end function to pull products 
 
-    //Listen for form submission and set new quantity & price
+    //Listen for form submission and set new quantity & price table in firebase
   document.querySelector(`.productListing-${productId} .updateButton`).addEventListener('click', async function(event){
     event.preventDefault()
     console.log(`product ${productId} update button clicked!`)
+    let currentUser = firebase.auth().currentUser
 
+    // Struggling here to see how I can get this to update the existing fields in our products collection in firebase
     let querySnapshot = await db.collection('products')
                                 .where('productId','==', productId)
-                                .get()   
-                                
+                                .get()  
+
     console.log(querySnapshot)
 
     let price = document.querySelector(`.productListing-${productId} .editPrice`).value
     let quantity = document.querySelector(`.productListing-${productId} .editQuantity`).value
     console.log(`submitted new price of ${price} and ${quantity}!`)
     
-    //Adding form information to firebase and updating for new price and quantity
-    let docRef = await db.collection('products').add({
+    //Adding form information to firebase and updating for new price and quantity in firebase
+    if (querySnapshot.size == 0){
+    await db.collection('products').update({
+      productId: productId,
       priceData: price,
-      quantityData: quantity
+      quantityData: quantity,
+      userId: currentUser.uid
     })
-  
+    }
     // End of adding quantity and price data to firebase
 
     //Remove old entry
-    let thisherId = docRef.id
-    console.log(`new input with ID ${thisherId} created`)
+    // let thisherId = docRef.id
+    // console.log(`new input with ID ${thisherId} created`)
 
   })
       // End of form submission
