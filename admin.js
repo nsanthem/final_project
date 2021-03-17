@@ -94,7 +94,7 @@ let db = firebase.firestore()
     console.log(`product ${productId} update button clicked!`)
     let currentUser = firebase.auth().currentUser
 
-    let querySnapshot = await db.collection('priceQuantity')
+    let querySnapshot = await db.collection('products')
                                 .where('productId','==', productId)
                                 .where('userId', '==', currentUser.uid)
                                 .get()  
@@ -105,7 +105,7 @@ let db = firebase.firestore()
     
     //Adding form information to firebase and updating for new price and quantity in firebase
     if (querySnapshot.size == 0){
-    await db.collection('priceQuantity').add({
+    await db.collection('products').update({
       productId: productId,
       priceData: price,
       quantityData: quantity,
@@ -113,14 +113,6 @@ let db = firebase.firestore()
     })
 
     // Struggling to see here how to get the new data to replace the old ones
-
-    let oldPrice = document.querySelector(`.productListing-${productId} .editPrice`).value
-    let newPrice = parseInt(oldPrice) + 
-    document.querySelector(`.productListing-${productId} .editPrice`).value = newPrice
-
-    let oldQuantity = document.querySelector(`.productListing-${productId} .editQuantity`).value
-    let newQuantity = parseInt(oldQuantity) + 
-    document.querySelector(`.productListing-${productId} .editQuantity`).value = newQuantity 
 
     }
     // End of adding quantity and price data to firebase
