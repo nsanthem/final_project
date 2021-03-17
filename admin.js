@@ -78,7 +78,7 @@ let db = firebase.firestore()
                           <p class="mt-4 quantityLabel">Qty</p>
                           <input type="number" id="quantity" name="quantity" min="0" step="1" class="editQuantity text-black" value="1">
                       </div>
-                      <div class="mt-8 button">
+                      <div class="mt-8 mb-8 button">
                           <input type="submit" value="Update" class="updateButton bg-green-400 text-white py-2 px-8 hover:bg-green-600 rounded-xl">
                       </div>
             </div>
