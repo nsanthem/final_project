@@ -28,11 +28,12 @@ let db = firebase.firestore()
 
         for (let i=0; i<products.length; i++) { 
             let productData = products[i].data()
+            let productId = productData.productId
             let productName = productData.itemName
             let productPrice = productData.priceData
             let productQuantity = productData.quantityData
             let productUrl = productData.imgUrl
-            renderProduct(productName, productPrice, productQuantity, productUrl)
+            renderProduct(productId, productName, productPrice, productQuantity, productUrl)
         }       
         // end loop
 
@@ -60,10 +61,10 @@ let db = firebase.firestore()
   })
 
   // start function to pull products from firebase 
-  async function renderProduct(productName, productPrice, productQuantity, productUrl) {
+  async function renderProduct(productId, productName, productPrice, productQuantity, productUrl) {
     document.querySelector('.products').insertAdjacentHTML('beforeend',`
     <div class="text-white">
-        <div class="productListing mx-4">
+        <div class="productListing-${productId} mx-4">
             <img src=${productUrl}>
             <p class="font-bold mt-4 text-xl font-serif md:text-2xl">${productName}</p>
             <p class="font-bold">Price: $${productPrice}</p>
@@ -85,28 +86,33 @@ let db = firebase.firestore()
         </div>
     </div>
   `)
-  }
   // end function to pull products 
 
-        //Listen for form submission and set new quantity & price
-      // document.querySelector('.updateButton').addEventListener('click', async function(event){
-      //   event.preventDefault()
+    //Listen for form submission and set new quantity & price
+  document.querySelector(`.productListing-${productId} .updateButton`).addEventListener('click', async function(event){
+    event.preventDefault()
+    console.log(`product ${productId} update button clicked!`)
 
-      //   let price = document.querySelector('.editPrice').value
-      //   let quantity = document.querySelector('.editQuantity').value
-      //   console.log(`submitted new price of ${price} and ${quantity}!`)
-        
-      //   //Adding form information to firebase
-      //   let docRef = await db.collection('products').add({
+    let querySnapshot = await db.collection('products')
+                                .where('productId','==', productId)
+                                .get()                            
 
-      //     priceData: price,
-      //     quantityData: quantity
-      //   })
-      //   // End of adding quantity and price data to firebase
+    let price = document.querySelector('.editPrice').value
+    let quantity = document.querySelector('.editQuantity').value
+    console.log(`submitted new price of ${price} and ${quantity}!`)
+    
+    //Adding form information to firebase
+    let docRef = await db.collection('products').add({
 
-      //   //Remove old entry
-      //   let thisherId = docRef.id
-      //   console.log(`new input with ID ${thisherId} created`)
+      priceData: price,
+      quantityData: quantity
+    })
+    // End of adding quantity and price data to firebase
 
-      // })
+    //Remove old entry
+    let thisherId = docRef.id
+    console.log(`new input with ID ${thisherId} created`)
+
+  })
       // End of form submission
+    }
