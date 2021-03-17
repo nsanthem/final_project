@@ -9,7 +9,7 @@ async function renderProduct(productName, productPrice, productQuantity, product
           <img src=${productUrl}>
           <p class="font-bold mt-4 text-xl font-serif md:text-2xl">${productName}</p>
           <p class="font-bold">Price: $${productPrice}</p>
-          <p class="font-bold mb-4">Quantity: ${productQuantity}</p>
+          <p class="font-bold mb-4">Quantity left: ${productQuantity}</p>
       </div>
   </div>
 `)
