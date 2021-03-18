@@ -1,4 +1,4 @@
-let db = firebase.firestore()
+// let db = firebase.firestore()
 
 
 // start js function to pull products from firebase and display on products html
