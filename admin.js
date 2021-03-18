@@ -21,24 +21,42 @@ firebase.auth().onAuthStateChanged(async function (user) {
 
     // start loop connected to js function at the bottom to pull products
 
-    let querySnapshot = await db.collection('products').get()
-    let products = querySnapshot.docs
+    // let querySnapshot = await db.collection('products').get()
+    // let products = querySnapshot.docs
 
-    console.log(products)
+    // console.log(products)
 
-    for (let i = 0; i < products.length; i++) {
-      let productData = products[i].data()
-      let productId = products[i].id
-      // console.log(productData)
-      // console.log(productId)
-      let productName = productData.itemName
-      let productPrice = productData.priceData
-      let productQuantity = productData.quantityData
-      let productUrl = productData.imgUrl
-      
+    // for (let i = 0; i < products.length; i++) {
+    //   let productData = products[i].data()
+    //   let productId = products[i].id
+    //   // console.log(productData)
+    //   // console.log(productId)
+    //   let productName = productData.itemName
+    //   let productPrice = productData.priceData
+    //   let productQuantity = productData.quantityData
+    //   let productUrl = productData.imgUrl
+    //   renderProduct(productId, productName, productPrice, productQuantity, productUrl)
+    // }
 
-      renderProduct(productId, productName, productPrice, productQuantity, productUrl)
-    }
+    let response = await fetch('/.netlify/functions/get_products')
+        console.log(response)
+        let products = await response.json()
+        console.log(products)
+
+        for (let i=0; i<products.length; i++) { 
+          let productId = products[i].id
+          let productName = products[i].name
+          let productPrice = products[i].price
+          let productQuantity = products[i].quantity
+          let productUrl = products[i].image 
+            // let productData = products[i].data()
+            // let productName = productData.itemName
+            // let productPrice = productData.priceData
+            // let productQuantity = productData.quantityData
+            // let productUrl = productData.imgUrl
+        
+            renderProduct(productId, productName, productPrice, productQuantity, productUrl)
+          }
     // end loop
 
   } else {
