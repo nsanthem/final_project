@@ -17,17 +17,22 @@ async function renderProduct(productName, productPrice, productQuantity, product
 window.addEventListener('DOMContentLoaded', async function(event) {
   event.preventDefault()
 
-let querySnapshot = await db.collection('products').get()
-let products = querySnapshot.docs
+// let querySnapshot = await db.collection('products').get()
+// let products = querySnapshot.docs
 
-console.log(products)
+let response = await fetch(`http://localhost:8888/.netlify/functions/get_products`)
+let products = await response.json()
 
 for (let i=0; i<products.length; i++) { 
-    let productData = products[i].data()
-    let productName = productData.itemName
-    let productPrice = productData.priceData
-    let productQuantity = productData.quantityData
-    let productUrl = productData.imgUrl
+  let productName = products[i].name
+  let productPrice = products[i].price
+  let productQuantity = products[i].quantity
+  let productUrl = products[i].image 
+    // let productData = products[i].data()
+    // let productName = productData.itemName
+    // let productPrice = productData.priceData
+    // let productQuantity = productData.quantityData
+    // let productUrl = productData.imgUrl
     renderProduct(productName, productPrice, productQuantity, productUrl)
 
 }
